@@ -1,0 +1,63 @@
+<head>
+   <link rel="stylesheet" href="/css/create_recipe.css">
+</head>
+<body>
+<div class="container">
+    <div class="create">
+    <form action="/create_recipe" method="post" id="hozon">
+        <div>
+                <input type="submit" value="保存">
+            <input type="text" class="dish" placeholder="料理名">
+        </div>
+        <div>
+            <input type="date" class="date" placeholder="日付"><%#未設定%>
+        </div> 
+        <div>
+            <input type="text" class="categry" placeholder="カテゴリ">
+        </div>
+
+            <form  method="post">
+                <div>
+                    <input type="text" id="name"  placeholder="食材">
+                    <%# 入力した食材をapp.rbの90行目に飛ばす %>
+                    <input type="number" id="num" placeholder="100">
+                    <input type="button" id="submit" value="計算">
+                </div>
+            </form>
+
+            
+            <%# <textarea type="text"  name="content" id="mon"></textarea>
+            <textarea type="number" name="calorie" id="result"></textarea> %>
+            <h5>レシピ</h5>
+            <textarea type="text" id="recipe"cols="" rows="20"></textarea>
+
+    </form>
+    </div>
+
+    
+        <div class="result-container">
+            <h5>食材のカロリー</h5>
+            <div class="waku">
+             <ul id="result"class="result"></ul>
+             <ul id="mon" class="mon"></ul>
+             <p hidden class="kakusu" id="keisann">{</p>
+        </div>
+ </div>          
+</div>    
+
+<%# textareaを使った場合横並びになって思っている表示のやり方ではない %>
+
+
+
+     <%# ここでjQueryのライブラリーを読み込み %>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+         <!--今回メインのajax処理を記載したjsファイルを読み込みます。-->
+        <script type="text/javascript" src="/js/script.js"></script>
+
+<%#保存場所をDBに作る%>
+<%# 何が必要か考える %>
+</body>
+</html>
+
+    

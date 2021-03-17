@@ -1,0 +1,29 @@
+<form action="/create_recipe" method="post">
+    <div>
+        <input type="text" name="dish" placeholder="料理名">
+    </div>
+    <div>
+        <input type="date" name="date" placeholder="日付"><%#未設定%>
+    </div> 
+    <div>
+        <input type="text" name="categry" placeholder="カテゴリ">
+    </div>
+</form>
+
+
+    <form action="/calculation_recipe" method="post">
+        <div>
+            <input type="text" name="name"  placeholder="食材">
+            <%# 入力した食材をapp.rbの90行目に飛ばす %>
+             <input type="number" name="num" placeholder="100">
+            <input type="submit" value="計算" onclick="cal(num.value);">
+        </div>
+
+    </form>
+
+    <script>
+        function cal(name,num){
+            const lean_value = document.getElementById('lean').value =
+            Math.round(name * num / 100);
+        }
+    </script>
